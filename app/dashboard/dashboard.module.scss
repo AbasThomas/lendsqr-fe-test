@@ -1,0 +1,133 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.loading {
+  @include flex-center;
+  min-height: 100vh;
+  font-size: $font-size-large;
+  color: $text-light;
+}
+
+.dashboard {
+  min-height: 100vh;
+  padding: $spacing-xl;
+  background: $background-light;
+  
+  @include mobile {
+    padding: $spacing-lg;
+  }
+}
+
+.header {
+  @include flex-between;
+  margin-bottom: $spacing-xl;
+  
+  h1 {
+    font-size: $font-size-xxlarge;
+    font-weight: 700;
+    color: $text-dark;
+  }
+}
+
+.logoutButton {
+  @include button-base;
+  background-color: $error-color;
+  color: $white;
+  padding: 10px 20px;
+  
+  &:hover {
+    background-color: darken($error-color, 10%);
+  }
+}
+
+.content {
+  max-width: 1200px;
+}
+
+.welcomeCard {
+  @include card;
+  
+  h2 {
+    font-size: $font-size-xlarge;
+    color: $text-dark;
+    margin-bottom: $spacing-md;
+  }
+  
+  > p {
+    color: $text-light;
+    margin-bottom: $spacing-xl;
+  }
+}
+
+.statusGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: $spacing-md;
+  margin-bottom: $spacing-xl;
+  padding: $spacing-lg;
+  background: $background-light;
+  border-radius: $border-radius-md;
+}
+
+.statusItem {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  font-size: $font-size-base;
+  color: $text-dark;
+  
+  .icon {
+    font-size: $font-size-large;
+  }
+}
+
+.nextSteps {
+  margin-bottom: $spacing-xl;
+  padding: $spacing-lg;
+  background: rgba($primary-color, 0.05);
+  border-radius: $border-radius-md;
+  border-left: 4px solid $primary-color;
+  
+  h3 {
+    font-size: $font-size-large;
+    color: $text-dark;
+    margin-bottom: $spacing-md;
+  }
+  
+  ol {
+    margin-left: $spacing-lg;
+    
+    li {
+      color: $text-light;
+      margin-bottom: $spacing-sm;
+      line-height: 1.6;
+    }
+  }
+}
+
+.docs {
+  padding: $spacing-lg;
+  background: rgba($success-color, 0.05);
+  border-radius: $border-radius-md;
+  border-left: 4px solid $success-color;
+  
+  h3 {
+    font-size: $font-size-large;
+    color: $text-dark;
+    margin-bottom: $spacing-md;
+  }
+  
+  ul {
+    list-style: none;
+    
+    li {
+      color: $text-light;
+      margin-bottom: $spacing-sm;
+      line-height: 1.6;
+      
+      strong {
+        color: $text-dark;
+      }
+    }
+  }
+}

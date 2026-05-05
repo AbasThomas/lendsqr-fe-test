@@ -1,0 +1,252 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.loginPage {
+  display: flex;
+  min-height: 100vh;
+  background: $white;
+  
+  @include tablet {
+    flex-direction: column;
+  }
+}
+
+.leftSection {
+  flex: 1;
+  background: $white;
+  display: flex;
+  flex-direction: column;
+  padding: 106px 0 0 97px;
+  
+  @include tablet {
+    padding: $spacing-xl $spacing-lg;
+    min-height: 300px;
+  }
+  
+  @include mobile {
+    padding: $spacing-lg;
+    min-height: 200px;
+  }
+}
+
+.logoContainer {
+  margin-bottom: 100px;
+  
+  @include tablet {
+    margin-bottom: $spacing-xl;
+  }
+  
+  img {
+    width: 174px;
+    height: auto;
+  }
+}
+
+.illustration {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  
+  @include tablet {
+    justify-content: center;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    
+    @include tablet {
+      max-width: 400px;
+    }
+    
+    @include mobile {
+      max-width: 300px;
+    }
+  }
+}
+
+.rightSection {
+  flex: 1;
+  @include flex-center;
+  padding: $spacing-xl;
+  background: $white;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.04);
+  
+  @include tablet {
+    box-shadow: none;
+    padding: $spacing-xl $spacing-lg;
+  }
+  
+  @include mobile {
+    padding: $spacing-lg;
+  }
+}
+
+.loginForm {
+  width: 100%;
+  max-width: 447px;
+  
+  h1 {
+    font-size: $font-size-xxlarge;
+    font-weight: 700;
+    color: $text-dark;
+    margin-bottom: 10px;
+    letter-spacing: -0.04em;
+    
+    @include mobile {
+      font-size: 32px;
+    }
+  }
+  
+  .subtitle {
+    font-size: 20px;
+    font-weight: 400;
+    color: $text-light;
+    margin-bottom: 60px;
+    
+    @include mobile {
+      font-size: $font-size-large;
+      margin-bottom: $spacing-xl;
+    }
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-lg;
+  }
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+  
+  input {
+    width: 100%;
+    padding: 16px 20px;
+    border: 2px solid rgba(84, 95, 125, 0.15);
+    border-radius: 8px;
+    font-size: $font-size-base;
+    font-family: $font-family;
+    color: $text-light;
+    outline: none;
+    transition: border-color 0.3s ease;
+    background: $white;
+    
+    &::placeholder {
+      color: rgba(84, 95, 125, 0.7);
+      font-weight: 400;
+    }
+    
+    &:focus {
+      border-color: rgba(57, 205, 204, 0.5);
+    }
+    
+    &.error {
+      border-color: $error-color;
+    }
+  }
+}
+
+.passwordWrapper {
+  position: relative;
+  
+  input {
+    width: 100%;
+    padding: 16px 70px 16px 20px;
+    border: 2px solid rgba(84, 95, 125, 0.15);
+    border-radius: 8px;
+    font-size: $font-size-base;
+    font-family: $font-family;
+    color: $text-light;
+    outline: none;
+    transition: border-color 0.3s ease;
+    background: $white;
+    
+    &::placeholder {
+      color: rgba(84, 95, 125, 0.7);
+      font-weight: 400;
+    }
+    
+    &:focus {
+      border-color: rgba(57, 205, 204, 0.5);
+    }
+    
+    &.error {
+      border-color: $error-color;
+    }
+  }
+}
+
+.togglePassword {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: $primary-color;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  letter-spacing: 0.1em;
+  
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.errorMessage {
+  color: $error-color;
+  font-size: $font-size-small;
+  margin-top: 4px;
+  font-weight: 400;
+}
+
+.forgotPassword {
+  color: $primary-color;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: -8px;
+  display: inline-block;
+  
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.loginButton {
+  width: 100%;
+  padding: 16px;
+  background-color: $primary-color;
+  color: $white;
+  border: none;
+  border-radius: 8px;
+  font-size: $font-size-base;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: 14px;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background-color: #2eb8b7;
+    box-shadow: 0px 4px 8px rgba(57, 205, 204, 0.3);
+  }
+  
+  &:active {
+    transform: scale(0.98);
+  }
+  
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
